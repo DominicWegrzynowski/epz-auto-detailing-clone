@@ -16,7 +16,7 @@
   --shadow: 0 18px 60px rgba(0,0,0,.45);
 
   /* Replace this with your own image path or URL */
-  --hero-image: url("https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=2400&q=70");
+  --hero-image: url("../img/Hero_picture.jpg");
 }
 
 *{ box-sizing:border-box; }
@@ -130,7 +130,7 @@ a:hover{ opacity:.92; }
   background-size: cover;
   background-position: center;
   filter: saturate(1.1) contrast(1.05);
-  transform: scale(1.02);
+  transform: none;
 }
 .hero::before{
   content:"";
