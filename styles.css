@@ -420,3 +420,68 @@ code{
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Car Gallery Slider */
+.car-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(18,27,44,.55);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.slider-track {
+  position: relative;
+}
+
+.slider-image {
+  display: none;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.slider-image.active {
+  display: block;
+}
+
+/* Arrows */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(7,10,16,.65);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+}
+
+.slider-btn:hover {
+  background: rgba(7,10,16,.85);
+}
+
+.slider-btn.prev { left: 12px; }
+.slider-btn.next { right: 12px; }
+
+
+/* Shrink gallery size */
+#gallery-area .car-slider {
+  max-width: 60%;          /* 👈 ~40% smaller */
+  margin: 0 auto;          /* center it */
+}
+
+/* On mobile, let it be wider so it’s usable */
+@media (max-width: 768px) {
+  #gallery-area .car-slider {
+    max-width: 100%;
+  }
+}

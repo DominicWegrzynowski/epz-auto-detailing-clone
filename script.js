@@ -92,3 +92,37 @@ setPhoneLinks();
 wireBookNowButtons();
 wireMobileMenu();
 setYear();
+
+
+(function () {
+  const slider = document.querySelector("[data-slider]");
+  if (!slider) return;
+
+  const images = slider.querySelectorAll(".slider-image");
+  const prevBtn = slider.querySelector(".prev");
+  const nextBtn = slider.querySelector(".next");
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle("active", i === index);
+    });
+  }
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+
+  // Optional autoplay
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  }, 4500);
+})();
